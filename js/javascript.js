@@ -1,29 +1,25 @@
-const intro = document.querySelector('.intro');
-const logo = document.querySelectorAll('.logo');
+const progressSection = document.querySelector('.progress-section');
+const progressBar = document.querySelector('.progress-bar');
+const progressNum = document.querySelector('.progress-num');
 
-window.addEventListener('load', function(){
+let x,y;
 
-    this.setTimeout(()=>{
-        logo.forEach((Logo,inx)=>{
-            setTimeout(()=>{
-                Logo.classList.add('active')
-            },(inx+1)*400)
-        })
-    })
+window.addEventListener('mousemove', function(e){
+    x = e.clientX;
+    y = e.clientY;
 
-    this.setTimeout(()=>{
-        logo.forEach((Logo,inx) =>{
-            this.setTimeout(()=>{
-                Logo.classList.remove('active');
-                Logo.classList.add('fade');
-
-            },(inx+1)*50)
-        })
-
-    },2000)
-
-     this.setTimeout(()=>{
-          intro.style.top = '-100vh'
-
-     },2300)
 })
+
+function updateProgressBar(){
+    progressSection.style.transform = `translate(${x}px , ${y}px)`;
+    progressBar.style.height = `${getScrollPercentage()}%`;
+    progressNum.innerText = `${Math.ceil(getScrollPercentage())}%`;
+ 
+    requestAnimationFrame(updateProgressBar)
+}
+
+function getScrollPercentage(){
+    return ((window.scrollY) / (document.body.scrollHeight - window.innerHeight) * 100);
+}
+
+updateProgressBar();
