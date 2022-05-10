@@ -10,70 +10,91 @@
     padding: 0;
     box-sizing: border-box;}
 
-html{
-    scroll-behavior: smooth;}
-
 body{
     direction: rtl;
-    font-family: vazir;}
+    font-family: vazir;
+    height: 100vh;
+    background: url("../img/1.jpg");
+    background-size: cover;
+    background-position: center;}
 
-nav{
+header{
     width: 100%;
-    height: 10vh;
-    background-color: gray;
-    position: sticky;
-    top: 0;}
+    height: 10vh;}
 
-nav .container{
-    width: 50%;
+header .container{
+    width: 80%;
+    height: 100%;
     margin: auto;}
 
-nav .container ul{
+header .container nav{
     width: 100%;
-    height: 100%;
-    display: flex;
-    justify-content: space-around;
-    list-style: none;}
-
-nav .container ul li{
-    width: 100%;
-    height: 100%;}
-
-nav .container ul li.active a{
-    background-color: #c00;}
-
-nav .container ul li a{
-    color: #222;
-    text-decoration: none;
-    width: 80%;
     height: 100%;
     display: flex;
     align-items: center;
-    justify-content: center;
-    font-size: 18px;}
+    justify-content: space-between;}
 
-section{
-    width: 100%;
-    height: 100vh;
-    font-size: 40px;
-    color: #222;
+header .container nav ul{
+    width: 40%;
+    height: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    list-style: none;}
+
+header .container nav ul li a{
+   display: block;
+   color: #fff;
+   text-decoration: none;
+   font-size:18px;}
+
+header .container nav .icon{
+    width: 10%;
+    height: 100%;
     display: flex;
     align-items: center;
     justify-content: center;}
 
-#home{
-    background-color: green;
-}
+header .container nav .icon a{
+    display: block;
+    text-decoration: none;
+    color: #fff;
+    font-size: 25px;}
 
-#about{
-    background-color: hotpink;
-}
+.intro{
+    width: 100%;
+    height: 100vh;
+    position: fixed;
+    top: 0;
+    right: 0;
+    background-color: rgb(0, 0, 7);
+    transition: all 1s ease-in;
+    z-index:1 ;}
 
-#contact{
-    background-color: khaki;
-}
+.intro .header-logo{
+    position: absolute;
+    top: 45%;
+    left: 50%;
+    display: flex;
+    transform: translateX(-50%);
+    color: #fff;}
 
-#footer{
-    background-color: lightsalmon;
-}
+.intro .header-logo .logo:nth-child(2){
+    color: #bb0826;}
 
+.logo{
+    margin: 0 5px;
+    letter-spacing: 2px;
+    opacity: 0;
+    position: relative;
+    bottom: -20px;
+    transition: all .3s ease-in-out;}
+
+.logo.active{
+    opacity: 1;
+    bottom: 0;}
+
+.logo.fade{
+    bottom: 150px;
+    opacity: 0;
+    transition: all .3s ease-in-out;}

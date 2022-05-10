@@ -1,24 +1,29 @@
-const sections = document.querySelectorAll('section');
-const li = document.querySelectorAll('nav .container ul li');
-let current;
+const intro = document.querySelector('.intro');
+const logo = document.querySelectorAll('.logo');
 
-window.addEventListener('scroll', function(){
-    sections.forEach(section =>{
-        const sectionTop = section.offsetTop;
-        const sectionHeight = section.clientHeight;
-        if(pageYOffset >= sectionTop - sectionHeight / 3){
-            current = section.getAttribute('id');
-        }
+window.addEventListener('load', function(){
+
+    this.setTimeout(()=>{
+        logo.forEach((Logo,inx)=>{
+            setTimeout(()=>{
+                Logo.classList.add('active')
+            },(inx+1)*400)
+        })
     })
 
-    li.forEach(item =>{
-        item.classList.remove('active');
-        if(item.classList.contains(current)){
-            item.classList.add('active');
-        }
-    })
+    this.setTimeout(()=>{
+        logo.forEach((Logo,inx) =>{
+            this.setTimeout(()=>{
+                Logo.classList.remove('active');
+                Logo.classList.add('fade');
 
+            },(inx+1)*50)
+        })
+
+    },2000)
+
+     this.setTimeout(()=>{
+          intro.style.top = '-100vh'
+
+     },2300)
 })
-
-
-
