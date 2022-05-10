@@ -1,15 +1,24 @@
-const title = document.querySelectorAll('.accordion-title');
+const sections = document.querySelectorAll('section');
+const li = document.querySelectorAll('nav .container ul li');
+let current;
 
-title.forEach(item =>{
-    item.addEventListener('click', function(){
-        item.classList.toggle('active');
-        const content = item.nextElementSibling;
-        if(content.style.height){
-            content.style.height = null
-        }else{
-            content.style.height = content.scrollHeight + "px";
-            content.style.paddingRight = 10 + "px";
-            content.style.paddingLeft = 10 + "px";
+window.addEventListener('scroll', function(){
+    sections.forEach(section =>{
+        const sectionTop = section.offsetTop;
+        const sectionHeight = section.clientHeight;
+        if(pageYOffset >= sectionTop - sectionHeight / 3){
+            current = section.getAttribute('id');
         }
     })
+
+    li.forEach(item =>{
+        item.classList.remove('active');
+        if(item.classList.contains(current)){
+            item.classList.add('active');
+        }
+    })
+
 })
+
+
+
