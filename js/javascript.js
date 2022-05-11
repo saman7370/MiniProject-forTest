@@ -1,21 +1,14 @@
-const h1 = document.querySelector('h1');
-const select = document.querySelector('.select');
-const btn = document.getElementsByTagName('button');
+const btn = document.querySelector('.search-icon');
+const overlay = document.querySelector('.search-overlay');
+const popup = document.querySelector('.search-popup');
 
-for(but of btn){
-    but.addEventListener('click', function(e){
-        const add = Number(h1.getAttribute('data-count') || 0);
-        h1.setAttribute('data-count' , add + 1);
-        h1.classList.add('zero');
+btn.addEventListener('click',function(){
+    overlay.classList.add('active');
+    popup.classList.add('active');
+})
 
-        let parent = e.target.parentNode;
-        let clone = parent.cloneNode(true);
-        select.appendChild(clone);
-        clone.lastElementChild.innerText = 'خرید';
-        if(clone){
-            h1.onclick = function(){
-                select.classList.toggle('display');
-            }
-        }
-    })
-}
+overlay.addEventListener('click', function(){
+    overlay.classList.remove('active');
+    popup.classList.remove('active');
+})
+
