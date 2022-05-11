@@ -3,30 +3,49 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>سرچ باکس</title>
+    <title>کد کشور ها</title>
     <link rel="stylesheet" href="css/style.css">
 </head>
 <body>
-    <div class="search-icon">
-        <i class="fas fa-search search-btn"></i>
-    </div>
+    <form action="">
+        <div>
+            <label>کشور</label>
+            <select name="country" id="country">
+                <option value="+1">امریکا (1+)</option>
+                <option value="+98">ایران (98+)</option>
+                <optgroup label="دیگر کشور ها">
+                    <option value="+49">آلمان (49+)</option>
+                    <option value="+93">افغانستان (93+)</option>
+                    <option value="+39">ایتالیا (39+)</option>
+                    <option value="+34">اسپانیا (34+)</option>
+                    <option value="+32">بلژیک (32+)</option>
+                    <option value="+55">برزیل (55+)</option>
+                    <option value="+385">کرواسی (385+)</option>
+                    <option value="+46">سوئد (46+)</option>
+                </optgroup>
+            </select>
+        </div>
+        <div>
+            <label>شماره همراه</label>
+            <span id="select-country">+1 :</span>
+            <input type="tel" maxlength="10" placeholder="شماره موبایل">
+        </div>
+        <input type="submit" value="ارسال کد">
+    </form>
 
-    <div class="search-overlay"></div>
-
-    <div class="search-popup">
-        <form class="search-form">
-            <div class="form-group">
-                <input type="text" class="form-control" placeholder="جستجو کنید">
-                <button class="submit-btn">
-                    <i class="fas fa-search"></i>
-                </button>
-            </div>
-        </form>
-    </div>
 
 
-    <script src="js/all.min.js"></script>
+
+
+
+
+
+
+
+
+
+
+
     <script src="js/javascript.js"></script>
-    
 </body>
 </html>
