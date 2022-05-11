@@ -3,35 +3,34 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>کد کشور ها</title>
+    <title>منو ریسپانسیو</title>
     <link rel="stylesheet" href="css/style.css">
+    <link rel="stylesheet" href="css/responsive.css">
 </head>
 <body>
-    <form action="">
-        <div>
-            <label>کشور</label>
-            <select name="country" id="country">
-                <option value="+1">امریکا (1+)</option>
-                <option value="+98">ایران (98+)</option>
-                <optgroup label="دیگر کشور ها">
-                    <option value="+49">آلمان (49+)</option>
-                    <option value="+93">افغانستان (93+)</option>
-                    <option value="+39">ایتالیا (39+)</option>
-                    <option value="+34">اسپانیا (34+)</option>
-                    <option value="+32">بلژیک (32+)</option>
-                    <option value="+55">برزیل (55+)</option>
-                    <option value="+385">کرواسی (385+)</option>
-                    <option value="+46">سوئد (46+)</option>
-                </optgroup>
-            </select>
+    <header>
+        <div class="container">
+            <div class="row">
+                <div class="logo">
+                    <a href="#">SAMAN</a>
+                </div>
+                <button class="toggle-menu">
+                    <span></span>
+                </button>
+                <nav>
+                    <ul>
+                        <li><a href="#" class="active">خانه</a></li>
+                        <li><a href="#">درباره ما</a></li>
+                        <li><a href="#">خدمات</a></li>
+                        <li><a href="#">نمونه کارها</a></li>
+                        <li><a href="#">مشتریان</a></li>
+                        <li><a href="#">تماس با ما</a></li>
+                        
+                    </ul>
+                </nav>
+            </div>
         </div>
-        <div>
-            <label>شماره همراه</label>
-            <span id="select-country">+1 :</span>
-            <input type="tel" maxlength="10" placeholder="شماره موبایل">
-        </div>
-        <input type="submit" value="ارسال کد">
-    </form>
+    </header>
 
 
 
@@ -46,6 +45,8 @@
 
 
 
+    <script src="js/all.min.js"></script>
     <script src="js/javascript.js"></script>
+    
 </body>
 </html>
