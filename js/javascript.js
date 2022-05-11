@@ -1,25 +1,21 @@
-const progressSection = document.querySelector('.progress-section');
-const progressBar = document.querySelector('.progress-bar');
-const progressNum = document.querySelector('.progress-num');
+const h1 = document.querySelector('h1');
+const select = document.querySelector('.select');
+const btn = document.getElementsByTagName('button');
 
-let x,y;
+for(but of btn){
+    but.addEventListener('click', function(e){
+        const add = Number(h1.getAttribute('data-count') || 0);
+        h1.setAttribute('data-count' , add + 1);
+        h1.classList.add('zero');
 
-window.addEventListener('mousemove', function(e){
-    x = e.clientX;
-    y = e.clientY;
-
-})
-
-function updateProgressBar(){
-    progressSection.style.transform = `translate(${x}px , ${y}px)`;
-    progressBar.style.height = `${getScrollPercentage()}%`;
-    progressNum.innerText = `${Math.ceil(getScrollPercentage())}%`;
- 
-    requestAnimationFrame(updateProgressBar)
+        let parent = e.target.parentNode;
+        let clone = parent.cloneNode(true);
+        select.appendChild(clone);
+        clone.lastElementChild.innerText = 'خرید';
+        if(clone){
+            h1.onclick = function(){
+                select.classList.toggle('display');
+            }
+        }
+    })
 }
-
-function getScrollPercentage(){
-    return ((window.scrollY) / (document.body.scrollHeight - window.innerHeight) * 100);
-}
-
-updateProgressBar();
