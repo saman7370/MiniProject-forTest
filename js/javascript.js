@@ -1,17 +1,31 @@
-const videoPlayer = document.querySelector('#videoPlayer');
-const myVideo = document.querySelector('#myVideo');
+const ul = document.querySelector('ul').children;
+const items = document.querySelector('.items').children;
 
+for(let i = 0; i < ul.length; i++){
 
-function stopPlayer(){
-    videoPlayer.style.display = 'none'}
+    ul[i].onclick = function(){
+     
+    for(let x = 0; x < ul.length; x++){
+        ul[x].classList.remove('active');
+    }
 
+    ul[i].classList.add('active');
 
+    const displayItem = this.getAttribute('data-filter');
 
-function playVideo(link){
+    for(let z =0; z < items.length; z++){
 
-    myVideo.src = link;
+        items[z].style.transform = 'scale(0)';
+        setTimeout(() => {
+            items[z].style.display = 'none';
+        }, 500);
 
-    videoPlayer.style.display = 'block';
-
+        if(items[z].getAttribute('data-category') == displayItem || displayItem == 'all'){
+            items[z].style.transform = 'scale(1)';
+            setTimeout(() => {
+                items[z].style.display = 'block';
+            }, 500);
+        }
+    }
 }
-
+}
