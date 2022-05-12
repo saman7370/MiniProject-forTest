@@ -1,15 +1,22 @@
-const toggleMenu = document.querySelector('.toggle-menu');
+const counters = document.querySelectorAll('.counter');
+console.log(counters)
 
-toggleMenu.addEventListener('click', openNav );
 
-function openNav(){
-    toggleMenu.classList.toggle('active');
-    const nav = document.querySelector('nav');
-    nav.classList.toggle('open');
+counters.forEach(counter =>{
+    counter.innerText = "0";
 
-    if(nav.classList.contains('open')){
-        nav.style.height = nav.scrollHeight + "px"
-    }else{
-        nav.style.height = "0";
+    const updateConter = function(){
+        const target = +counter.getAttribute('data-target');
+        const c = +counter.innerText;
+
+        const increment = target / 200;
+
+        if(c<target){
+            counter.innerText = Math.ceil(c + increment);
+            setTimeout(updateConter,1)
+        }else{
+            counter.innerText = target
+        }
     }
-}
+    updateConter()
+})
