@@ -1,22 +1,17 @@
-const counters = document.querySelectorAll('.counter');
-console.log(counters)
+const videoPlayer = document.querySelector('#videoPlayer');
+const myVideo = document.querySelector('#myVideo');
 
 
-counters.forEach(counter =>{
-    counter.innerText = "0";
+function stopPlayer(){
+    videoPlayer.style.display = 'none'}
 
-    const updateConter = function(){
-        const target = +counter.getAttribute('data-target');
-        const c = +counter.innerText;
 
-        const increment = target / 200;
 
-        if(c<target){
-            counter.innerText = Math.ceil(c + increment);
-            setTimeout(updateConter,1)
-        }else{
-            counter.innerText = target
-        }
-    }
-    updateConter()
-})
+function playVideo(link){
+
+    myVideo.src = link;
+
+    videoPlayer.style.display = 'block';
+
+}
+

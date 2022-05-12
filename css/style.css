@@ -13,36 +13,86 @@
 body{
     direction: rtl;
     font-family: vazir;
-    height: 100vh;
-    background: linear-gradient(rgba(74,33,236,0.8), rgba(18,206,149,0.8)), url('../img/1.jpg');
-    background-size: cover;
-    background-position: center;
     display: flex;
     flex-direction: column;
     align-items: center;
-    justify-content: center;}
+    justify-content: center;
+    height: 100vh;
+    background-color: #01b167;}
 
 .container{
     width: 80%;
     margin: auto;}
 
-.counter-section{
+.container h1{
+    color: #fff;
+    font-size: 45px;
+    text-align: center;
+    padding: 60px 0px;}
+
+.container .row{
     display: flex;
     align-items: center;
-    justify-content: center;}
+    justify-content: space-between;}
 
-.counter-section .counter-box{
-    width: calc(25% - 20px);
-    text-align: center;
-    color: #fff;}
+.col{
+    width: calc(50% - 20px);}
 
-.counter-section .counter-box svg{
-    color: #faa000;
-    font-size: 60px;}
+.col img{
+    width: 100%;}
 
-.counter-section .counter-box .counter{
-    font-size: 30px;
-    padding: 20px 0;}
+.col .feature-img{
+    width: 100%;
+    position: relative;}
 
-.counter-section .counter-box p{
-    font-size: 25px;}
+.col .btn-play{
+    width: 80px;
+    height: 80px;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50% , -50%);
+    cursor: pointer;}
+
+.col .small-img-row{
+    background-color: #fff;
+    display: flex;
+    align-items: center;
+    margin-top: 20px;
+    height: 120px;}
+
+.col .small-img-row:nth-child(1){
+    margin-top: 0;}
+
+.col .small-img-row .small-img{
+    position: relative;
+    height: 100%;}
+
+.col .small-img-row .small-img .cover{
+    width: 200px;
+    height: 100%;}
+
+.col .small-img-row p{
+    padding: 0 30px;}
+
+.col .small-img-row .btn-play{
+    width: 60px;
+    height: 60px;}
+
+.video-player{
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50% , -50%);
+    width: 80%;}
+
+#videoPlayer{
+    display: none;}
+
+.close-btn{
+    position: absolute;
+    top: 10px;
+    right: 10px;
+    cursor: pointer;
+    width: 40px;
+    height: 40px;}
