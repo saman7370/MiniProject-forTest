@@ -11,42 +11,95 @@
     box-sizing: border-box;}
 
 body{
-    font-family: vazir;
     direction: rtl;
-    background: linear-gradient(rgba(0,0,0,0.7), rgba(0,0,0,0.7)), url("../img/bg.jpg");
-    height: 100vh;
+    font-family: vazir;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    height: 100vh;}
+
+.btn{
+    width: 200px;
+    border: none;
+    background-color: orangered;
+    color: #fff;
+    padding: 10px 15px;
+    font-family: vazir;
+    border-radius: 5px;
+    font-size: 20px;
+    cursor: pointer;}
+
+
+.box-warnning{
+    width: 250px;
+    padding: 15px 20px;
+    background-color: green;
+    position: absolute;
+    top: 50px;
+    right: 0;
+    border-radius: 4px;
     display: flex;
     align-items: center;
-    justify-content: center;}
-
-.container{
-    width: 70%;
-    margin: auto;}
-
-h1{
+    justify-content: space-between;
     color: #fff;
-    font-size: 45px;
-    font-weight: bold;}
+    font-size: 18px;}
 
-h1 span{
-    color: #c00;
-    font-size: 35px;}
+.hiden{
+    visibility: hidden;}
 
-h1 span::after{
-    content: '';
-    border-right: 3px solid #c00;
-    margin-right: 10px;
-    animation: stoplight .5s ease infinite;}
+.box-warnning span svg{
+    cursor: pointer;}
 
-@keyframes stoplight{
+.box-warnning.active{
+    animation: activeAlert 1s ease forwards;}
+
+    @keyframes activeAlert{
+        0%{
+            transform: translateX(-5%);}
+    
+        40%{
+            transform: translateX(0);}
+    
+        80%{
+            transform: translateX(-15%);}
+    
+        100%{
+            transform: translateX(100%);}
+    }
+
+.box-warnning.show{
+    animation: showAlert 1s ease forwards ;}
+
+@keyframes showAlert{
     0%{
-        opacity: 0;}
+        transform: translateX(100%);}
+
+    40%{
+        transform: translateX(-15%);}
+
+    80%{
+        transform: translateX(0);}
 
     100%{
-        opacity: 1;}
+        transform: translateX(-5%);}
 }
 
-h2{
-    color: rgb(199, 197, 197);
-    margin-top: 25px;
-    font-size: 35px;}
+.box-warnning.show::before{
+    content: '';
+    width: 100%;
+    height: 4px;
+    background-color: #32ac32;
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    animation: progres 5s linear;}
+
+@keyframes progres{
+    0%{
+        width: 100%;
+    }
+    100%{
+        width: 0;
+    }
+}

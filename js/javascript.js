@@ -1,26 +1,31 @@
-const text = ['طراح وب','برنامه نویس','مدرس برنامه نویسی'];
+const boxWarnning = document.querySelector('.box-warnning');
+const btn = document.querySelector('.btn');
+const close = document.querySelector('.close-btn');
+let timer;
 
-let count = 0;
-let index = 0;
-let currentText = "";
-let letter = "";
+btn.addEventListener('click',function(){
+    showAlertBox();
+})
 
-(function type(){
+close.addEventListener('click',function(){
+    hidenAlert();
+    clearTimeout(timer);
+})
 
-    if(count === text.length){
-        count = 0;
+function showAlertBox(){
+    boxWarnning.classList.add('show');
+    if(boxWarnning.classList.contains('hiden')){
+        boxWarnning.classList.remove('hiden')
     }
+    timer = setTimeout(() => {
+        hidenAlert();
+        
+    }, 5000);
 
-    currentText = text[count];
-    letter = currentText.slice(0, ++index);
+}
 
-    document.querySelector('.type').textContent = letter;
+function hidenAlert(){
+    boxWarnning.classList.remove('show');
+    boxWarnning.classList.add('active');
 
-    if(letter.length === currentText.length){
-        count++;
-        index = 0;
-    }
-
-    setTimeout(type , 200)
-
-})()
+}
