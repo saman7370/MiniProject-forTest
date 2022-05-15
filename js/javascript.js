@@ -1,9 +1,26 @@
-const icon = document.querySelector('.icon');
-const nav = document.querySelector('nav');
+const text = ['طراح وب','برنامه نویس','مدرس برنامه نویسی'];
 
-icon.addEventListener('click', function(){
+let count = 0;
+let index = 0;
+let currentText = "";
+let letter = "";
 
-    icon.classList.toggle('active');
+(function type(){
 
-    nav.classList.toggle('active');
-})
+    if(count === text.length){
+        count = 0;
+    }
+
+    currentText = text[count];
+    letter = currentText.slice(0, ++index);
+
+    document.querySelector('.type').textContent = letter;
+
+    if(letter.length === currentText.length){
+        count++;
+        index = 0;
+    }
+
+    setTimeout(type , 200)
+
+})()
