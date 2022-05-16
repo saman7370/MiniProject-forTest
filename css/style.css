@@ -1,105 +1,47 @@
-@font-face {
-    font-family: "vazir";
-    src: url("../fonts/vazir.eot") format("eot");
-    src: url("../fonts/vazir.ttf") format("ttf");
-    src: url("../fonts/vazir.woff") format("woff");
-    src: url("../fonts/vazir.woff2") format("woff2");}
-
 *{
     margin: 0;
     padding: 0;
     box-sizing: border-box;}
 
 body{
-    direction: rtl;
-    font-family: vazir;
+    direction: rtl;}
+
+header{
+    width: 100%;
+    height: 100vh;
+    background-color: #111;
     display: flex;
-    flex-direction: column;
+    align-items: center;
+    justify-content: center;}
+
+.container{
+    width: 70%;
+    margin: auto;}
+
+.content{
+    display: flex;
+    flex-wrap: wrap;
+    align-items: center;
+    justify-content: space-between;}
+
+.content .box{
+    width: 32%;
+    height: 200px;
+    display: flex;
     align-items: center;
     justify-content: center;
-    height: 100vh;}
+    background-color: #333;
+    margin-top: 40px;}
 
-.btn{
-    width: 200px;
-    border: none;
-    background-color: orangered;
-    color: #fff;
-    padding: 10px 15px;
-    font-family: vazir;
-    border-radius: 5px;
-    font-size: 20px;
-    cursor: pointer;}
-
-
-.box-warnning{
-    width: 250px;
-    padding: 15px 20px;
-    background-color: green;
-    position: absolute;
-    top: 50px;
-    right: 0;
-    border-radius: 4px;
+.content .box .ineer{
+    width: 100%;
+    height: 100%;
     display: flex;
     align-items: center;
-    justify-content: space-between;
-    color: #fff;
-    font-size: 18px;}
-
-.hiden{
-    visibility: hidden;}
-
-.box-warnning span svg{
+    justify-content: center;
     cursor: pointer;}
 
-.box-warnning.active{
-    animation: activeAlert 1s ease forwards;}
-
-    @keyframes activeAlert{
-        0%{
-            transform: translateX(-5%);}
-    
-        40%{
-            transform: translateX(0);}
-    
-        80%{
-            transform: translateX(-15%);}
-    
-        100%{
-            transform: translateX(100%);}
-    }
-
-.box-warnning.show{
-    animation: showAlert 1s ease forwards ;}
-
-@keyframes showAlert{
-    0%{
-        transform: translateX(100%);}
-
-    40%{
-        transform: translateX(-15%);}
-
-    80%{
-        transform: translateX(0);}
-
-    100%{
-        transform: translateX(-5%);}
-}
-
-.box-warnning.show::before{
-    content: '';
-    width: 100%;
-    height: 4px;
-    background-color: #32ac32;
-    position: absolute;
-    bottom: 0;
-    left: 0;
-    animation: progres 5s linear;}
-
-@keyframes progres{
-    0%{
-        width: 100%;
-    }
-    100%{
-        width: 0;
-    }
-}
+.content .box .ineer h1{
+    color: #fff;
+    font-size: 35px;
+    z-index: 1;}
