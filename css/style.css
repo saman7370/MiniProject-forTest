@@ -1,42 +1,91 @@
+@font-face {
+    font-family: "vazir";
+    src: url("../fonts/vazir.eot") format("eot");
+    src: url("../fonts/vazir.ttf") format("ttf");
+    src: url("../fonts/vazir.woff") format("woff");
+    src: url("../fonts/vazir.woff2") format("woff2");}
+
 *{
     margin: 0;
     padding: 0;
     box-sizing: border-box;}
 
 body{
-    direction: rtl;}
+    direction: rtl;
+    font-family: vazir;}
 
-.product{
+.header{
     width: 100%;
     height: 100vh;
-    background-color: #9acbf7;
-    position: relative;}
-
-.product .main-img{
-    width: 100%;
-    height: 100%;
+    background-color: #000;
     display: flex;
     align-items: center;
-    justify-content: center;}
+    justify-content: center;
+    color: #fff;}
 
-.product .main-img img{
-    width: 500px;}
+.container{
+    width: 80%;
+    margin: auto}
 
-.product .box-img{
-    display: flex;
-    position: absolute;
-    bottom: 50px;
-    right: 50%;
-    transform: translateX(50%);}
+.title{
+    text-align: center;
+    width: 100%;
+    margin-bottom: 30px;}
 
-.product .box-img .box{
-    border: 3px solid darkblue;
-    margin: 0 10px;}
+.title h1{
+    font-size: 35px;}
 
-.product .box-img .box.active{
-    border: 3px solid orangered;}
+.slider{
+    width: 700px;
+    height: 350px;
+    border: 2px solid #333;
+    text-align: center;
+    margin: auto;
+    padding: 20px;
+    word-spacing: 1px;}
 
-.product .box-img .box img{
+.slider .slide{
+    width: 100%;
+    display: none;}
+
+.slider .slide.active{
+    display: block;
+    animation: slide 1s ease-in-out;}
+
+@keyframes slide{
+    0%{
+        transform: translateX(-25px);
+        opacity: 0;}
+
+    100%{
+        transform: translateX(0);
+        opacity: 1;}
+}
+
+.slider .slide .caption{
+    margin-top: 30px;}
+
+.slider .slide .caption h3{
+    font-size: 18px;
+    margin: 15px 0;}
+
+.slider .slide .caption span{
+    color: rgb(111, 111, 233);
+    font-size: 14px;}
+
+.profile{
+    width: 100%;
+    text-align: center;
+    padding: 20px 0;}
+
+.profile img{
     width: 80px;
-    cursor: pointer;}
+    height: 80px;
+    border-radius: 50%;
+    margin: 0 10px;
+    cursor: pointer;
+    border: 2px solid #fff;
+    opacity: 0.2;}
 
+.profile img.active{
+    opacity: 1;}
