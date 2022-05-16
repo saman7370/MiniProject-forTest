@@ -6,42 +6,37 @@
 body{
     direction: rtl;}
 
-header{
+.product{
     width: 100%;
     height: 100vh;
-    background-color: #111;
-    display: flex;
-    align-items: center;
-    justify-content: center;}
+    background-color: #9acbf7;
+    position: relative;}
 
-.container{
-    width: 70%;
-    margin: auto;}
-
-.content{
-    display: flex;
-    flex-wrap: wrap;
-    align-items: center;
-    justify-content: space-between;}
-
-.content .box{
-    width: 32%;
-    height: 200px;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    background-color: #333;
-    margin-top: 40px;}
-
-.content .box .ineer{
+.product .main-img{
     width: 100%;
     height: 100%;
     display: flex;
     align-items: center;
-    justify-content: center;
+    justify-content: center;}
+
+.product .main-img img{
+    width: 500px;}
+
+.product .box-img{
+    display: flex;
+    position: absolute;
+    bottom: 50px;
+    right: 50%;
+    transform: translateX(50%);}
+
+.product .box-img .box{
+    border: 3px solid darkblue;
+    margin: 0 10px;}
+
+.product .box-img .box.active{
+    border: 3px solid orangered;}
+
+.product .box-img .box img{
+    width: 80px;
     cursor: pointer;}
 
-.content .box .ineer h1{
-    color: #fff;
-    font-size: 35px;
-    z-index: 1;}
