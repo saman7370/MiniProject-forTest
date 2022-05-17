@@ -1,6 +1,11 @@
-window.addEventListener('load',function(){
+const close = document.querySelector('#close');
+const open = document.querySelector('#open');
+const container = document.querySelector('.container');
 
-    const lodear = this.document.querySelector('.lodear');
+open.addEventListener('click',function(){
+    container.classList.add('show-nav');
+})
 
-    lodear.classList.add('active')
+close.addEventListener('click',function(){
+    container.classList.remove('show-nav');
 })
