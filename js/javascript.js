@@ -1,8 +1,6 @@
-function sliderImg(link){
-    document.querySelector('.bmw').src = link ;
-}
+window.addEventListener('load',function(){
 
-function changeColor(color){
-    const sec = document.querySelector('section');
+    const lodear = this.document.querySelector('.lodear');
 
-    sec.style.backgroundColor = color;}
+    lodear.classList.add('active')
+})
