@@ -1,11 +1,8 @@
-const open = document.querySelector('.openmenu');
-const close = document.querySelector('.closemenu');
-const layers = document.querySelector('.layer1');
-
-open.onclick = ()=>{
-    layers.classList.add('check');
+function sliderImg(link){
+    document.querySelector('.bmw').src = link ;
 }
 
-close.onclick = ()=>{
-    layers.classList.remove('check');
-}
+function changeColor(color){
+    const sec = document.querySelector('section');
+
+    sec.style.backgroundColor = color;}

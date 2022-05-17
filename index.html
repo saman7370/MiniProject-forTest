@@ -3,38 +3,53 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>منو همبرگری انیمیشنی</title>
+    <title>تغییر بادی سایت</title>
     <link rel="stylesheet" href="css/style.css">
 </head>
 <body>
 
-    <div class="container">
-        <div class="openmenu"><i class="fas fa-bars"></i></div>
-        <div class="layer1">
-            <div class="layer2">
-                <div class="layer3">
-                    <div class="layer4">
-                        <div class="closemenu"><i class="fas fa-times"></i></div>
-                        <div class="links">
-                            <a href="#">خانه</a>
-                            <a href="#">سرویس ها</a>
-                            <a href="#">خدمات</a>
-                            <a href="#">پروژه ها</a>
-                            <a href="#">درباره ما</a>
-                            <a href="#">تماس با ما</a>
-                        </div>
+    <section class="section">
+        <div class="container">
+            <header>
+                <nav>
+                    <ul>
+                        <li><a href="#">خانه</a></li>
+                        <li><a href="#">سرویس ها</a></li>
+                        <li><a href="#">درباره ما</a></li>
+                        <li><a href="#">تماس با ما</a></li>
+                    </ul>
+                    <div class="logo">
+                        <a href="#"><span>SA</span>MAN</a>
                     </div>
+                </nav>
+               
+            </header>
+
+            <div class="content">
+                <div class="content-img">
+                    <img src="img/blue.png" alt="" class="bmw">
                 </div>
+                <div class="content-text">
+                    <h1>این یکی از <span>بهترین</span> چیزهایی هست که دیدم</h1>
+                    <p>
 
-
+                        لورم ایپسوم یا طرح‌نما (به انگلیسی: Lorem ipsum) به متنی آزمایشی و بی‌معنی در صنعت چاپ، صفحه‌آرایی و طراحی گرافیک گفته می‌شود. طراح گرافیک از این متن به عنوان عنصری از ترکیب بندی برای پر کردن صفحه و ارایه اولیه شکل ظاهری و کلی طرح سفارش گرفته شده استفاده می نماید، تا از نظر گرافیکی نشانگر چگونگی نوع و اندازه فونت و ظاهر متن باشد. معمولا طراحان گرافیک برای صفحه‌آرایی، نخست از متن‌های آزمایشی و بی‌معنی استفاده می‌کنند تا صرفا به مشتری یا صاحب کار خود نشان دهند که صفحه طراحی یا صفحه بندی شده بعد از اینکه متن در آن قرار گیرد چگونه به نظر می‌رسد و قلم‌ها و اندازه‌بندی‌ها چگونه در نظر گرفته شده‌است.</p>
+                        <a href="#">خواندن بیشتر</a>
+                </div>
             </div>
+            <ul class="footer">
+                <li onclick="sliderImg('img/blue.png'); changeColor('#0062be')"><img src="img/blue.png" alt=""></li>
+                <li onclick="sliderImg('img/red.png'); changeColor('#ec0d0d')"><img src="img/red.png" alt=""></li>
+                <li onclick="sliderImg('img/black.png'); changeColor('#0f0f0f')"><img src="img/black.png" alt=""></li>
+               
+            </ul>
         </div>
-    </div>
-
-
-
-
-
+        <ul class="social">
+            <li><a href="#"><i class="fab fa-facebook"></i></a></li>
+            <li><a href="#"><i class="fab fa-instagram"></i></a></li>
+            <li><a href="#"><i class="fab fa-twitter"></i></a></li>
+        </ul>
+    </section>
 
 
 
@@ -50,6 +65,5 @@
 
     <script src="js/all.min.js"></script>
     <script src="js/javascript.js"></script>
-    
 </body>
 </html>
