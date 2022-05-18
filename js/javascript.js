@@ -1,11 +1,19 @@
-const close = document.querySelector('#close');
-const open = document.querySelector('#open');
-const container = document.querySelector('.container');
+const button = document.querySelectorAll('a');
 
-open.addEventListener('click',function(){
-    container.classList.add('show-nav');
-})
+button.forEach(btn =>{
+    btn.addEventListener('click',function(e){
+        let x = e.clientX - e.target.offsetLeft;
+        let y = e.clientY - e.target.offsetTop;
+        let span = document.createElement('span');
+        this.appendChild(span);
 
-close.addEventListener('click',function(){
-    container.classList.remove('show-nav');
+        span.style.left = x + "px";
+        span.style.top = y + "px";
+
+        setTimeout(() =>{
+
+            span.remove()
+
+        },1000);
+    })
 })
