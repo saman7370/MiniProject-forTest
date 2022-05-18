@@ -1,19 +1,15 @@
-const button = document.querySelectorAll('a');
+const open = document.querySelector('.open');
 
-button.forEach(btn =>{
-    btn.addEventListener('click',function(e){
-        let x = e.clientX - e.target.offsetLeft;
-        let y = e.clientY - e.target.offsetTop;
-        let span = document.createElement('span');
-        this.appendChild(span);
+const close = document.querySelector('.close');
 
-        span.style.left = x + "px";
-        span.style.top = y + "px";
+const containerModal = document.querySelector('.container-modal');
 
-        setTimeout(() =>{
+ open.addEventListener('click',function(){
 
-            span.remove()
+    containerModal.classList.add('show');
+ })
 
-        },1000);
-    })
-})
+ close.addEventListener('click',function(){
+
+    containerModal.classList.remove('show');
+ })
