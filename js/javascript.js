@@ -1,15 +1,9 @@
-const open = document.querySelector('.open');
+const skew = document.querySelector('.angel');
 
-const close = document.querySelector('.close');
+window.addEventListener('scroll',function(){
 
-const containerModal = document.querySelector('.container-modal');
+    const value = -10 + window.scrollY / 60 ;
+    console.log(value)
 
- open.addEventListener('click',function(){
-
-    containerModal.classList.add('show');
- })
-
- close.addEventListener('click',function(){
-
-    containerModal.classList.remove('show');
- })
+    skew.style.transform = "skewY("+value+"deg)";
+})
