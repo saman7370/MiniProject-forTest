@@ -1,3 +1,10 @@
+@font-face {
+    font-family: "vazir";
+    src: url("../fonts/vazir.eot") format("eot");
+    src: url("../fonts/vazir.ttf") format("ttf");
+    src: url("../fonts/vazir.woff") format("woff");
+    src: url("../fonts/vazir.woff2") format("woff2");}
+
 *{
     margin: 0;
     padding: 0;
@@ -5,23 +12,105 @@
 
 body{
     direction: rtl;
-    height: 200vh;}
+    font-family: vazir;}
 
-div{
+header{
+    width: 100%;
+    height: 8vh;
+    background-color: rgba(0, 0, 0,0.8);
+    position: fixed;
+    top: 0;
+    right: 0;
+    z-index: 1000;}
+
+header .container{
+    width: 80%;
+    margin: auto;}
+
+header nav{
+    width: 100%;
+    height: 100%;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;}
+
+header nav ul{
+    display: flex;
+    list-style: none;
+    align-items: center;
+    justify-content: space-between;
+    width: 25%;}
+
+header nav ul li a{
+    color: #fff;
+    font-size: 20px;
+    text-decoration: none;}
+
+header nav ul li a:hover{
+    color: orangered;}
+
+header nav a{
+    text-decoration: none;
+    font-size: 25px;
+    font-weight: 900;
+    color: #fff;}
+
+.banner{
     width: 100%;
     height: 100vh;
+    position: relative;}
+
+.banner .boximg{
+    width: 100%;
+    height: 100%;
+    position: absolute;
+    top: 0;
+    right: 0;}
+
+.banner .boximg img{
+    width: 100%;
+    height: 100%;
     position: absolute;
     top: 0;
     right: 0;
-    background: url("../images/1.jpg");
-    background-size: cover;}
+    opacity: 0;
+    transition: all .3s ease-in-out;}
 
-div .angel{
-    width: 100%;
-    height: 100%;
-    background-color: #fff;
+.banner .boximg img.active{
+    opacity: 1;}
+
+.banner .boximg ul{
     position: absolute;
-    bottom: -100%;
+    top: 50%;
     left: 0;
-    transform: skewY(-10deg); 
-    transform-origin: top left; }
+    list-style: none;}
+
+.banner .boximg ul li{
+    width: 60px;
+    height: 60px;
+    background-color: #fff;
+    transform: translateY(-50%);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    cursor: pointer;
+    transition: all .3s ease-in-out;}
+
+.banner .boximg ul li:hover{
+    background-color: rgb(231, 101, 54);}
+
+.banner .boximg ul li:hover::before{
+    border-left: 2px solid #fff;
+    border-bottom: 2px solid #fff;}
+
+.banner .boximg ul li::before{
+    content: '';
+    position: absolute;
+    border-left: 2px solid #000;
+    border-bottom: 2px solid #000;
+    width: 20px;
+    height: 20px;
+    transform: rotate(45deg);}
+
+.banner .boximg ul li:nth-child(2)::before{
+    transform: rotate(-135deg);}

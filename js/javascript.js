@@ -1,9 +1,16 @@
-const skew = document.querySelector('.angel');
+const boximg = document.querySelector('.boximg');
 
-window.addEventListener('scroll',function(){
+const slides = boximg.getElementsByTagName('img');
 
-    const value = -10 + window.scrollY / 60 ;
-    console.log(value)
+let i = 0;
 
-    skew.style.transform = "skewY("+value+"deg)";
-})
+function next(){
+    slides[i].classList.remove('active');
+    i = (i + 1) % slides.length;
+    slides[i].classList.add('active');}
+
+
+function prev(){
+    slides[i].classList.remove('active');
+    i = (i - 1 + slides.length) %slides.length;
+    slides[i].classList.add('active');}
