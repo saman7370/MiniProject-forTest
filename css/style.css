@@ -12,23 +12,81 @@
 
 body{
     direction: rtl;
-    font-family: vazir;
+    font-family: vazir;}
+
+section{
+    width: 100%;
+    height: 100vh;
     background-color: gray;
     display: flex;
     align-items: center;
-    flex-direction: column;
-    justify-content: center;
-    height: 100vh;}
+    justify-content: center;}
 
-.container{
-    text-align: center;}
-
-.container .button{
-    font-family: vazir;
-    padding: 10px 15px;
-    border: none;
+section .box{
+    position: relative;
     width: 200px;
-    background-color: orangered;
-    font-size: 18px;
-    color: #fff;
+    height: 200px;
+    margin: 10px;}
+
+section .box .boximg{
+    position: absolute;
+    top: 0;
+    right: 0;
+    width: 100%;
+    height: 100%;}
+
+ section .box .boximg.active{
+    position:fixed;
+    top: 0;
+    right: 0;
+    width:100%;
+    height: 100%;
+    z-index: 1000;}
+
+section .box .boximg img{
+    position: absolute;
+    top: 0;
+    right: 0;
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
     cursor: pointer;}
+
+section .box .boximg.active img{
+    top: 50px;
+    right: 50px;
+    bottom: 50px;
+    left: 50px;
+    width: calc(100% - 100px);
+    height: calc(100% - 100px);}
+
+section .box .boximg h1{
+    opacity: 0;
+    visibility: hidden;}
+
+section .box .boximg.active h1{
+    opacity: 1;
+    visibility: visible;
+    text-align: center;
+    color: #fff;
+    letter-spacing: 5px;
+    margin-top: 10px;
+    font-size: 18px;}
+
+section .box .boximg .content{
+    position: absolute;
+    bottom: 50px;
+    right: 50px;
+    left: 50px;
+    background-color: rgba(0, 0, 0,0.9);
+    color: #fff;
+    padding: 10px 10px;
+    opacity: 0;
+    visibility: hidden;
+    transform: translateY(200px);}
+
+section .box .boximg.active .content{
+    opacity: 1;
+    visibility: visible;
+    transition: all .3s ease-in-out;
+    transform: translateY(0);}

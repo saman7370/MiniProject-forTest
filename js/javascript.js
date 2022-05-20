@@ -1,9 +1,16 @@
-const favicon = document.querySelector('#favicon');
+const boximg = document.querySelectorAll('.boximg');
 
-function toRed(){
-    favicon.setAttribute('href','img/favicon.png');
-}
+boximg.forEach(saman => saman.addEventListener('click', function(){
 
-function toGreen(){
-    favicon.setAttribute('href','img/faviconTwo.png');
-}
+    saman.classList.toggle('active');
+}))
+
+ 
+    
+
+
+
+
+
+
+
