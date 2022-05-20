@@ -1,6 +1,9 @@
-const header = document.querySelector('.header');
+const favicon = document.querySelector('#favicon');
 
-window.addEventListener('scroll', function(){
+function toRed(){
+    favicon.setAttribute('href','img/favicon.png');
+}
 
-    header.classList.toggle('active', window.scrollY > 0);
-})
+function toGreen(){
+    favicon.setAttribute('href','img/faviconTwo.png');
+}
