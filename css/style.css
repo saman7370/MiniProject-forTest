@@ -1,6 +1,6 @@
 @font-face {
     font-family: "vazir";
-    src: url("../fonts/vazir.eot") format("vazir");
+    src: url("../fonts/vazir.eot") format("eot");
     src: url("../fonts/vazir.ttf") format("ttf");
     src: url("../fonts/vazir.woff") format("woff");
     src: url("../fonts/vazir.woff2") format("woff2");}
@@ -12,81 +12,51 @@
 
 body{
     direction: rtl;
-    font-family: vazir;}
+    font-family: vazir;
+    background-color: rgba(33, 141, 141, 0.5);
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    height: 100vh;}
 
-section{
-    width: 100%;
-    height: 100vh;
-    background-color: gray;
+h1{
+    font-size: 40px;
+    font-weight: bold;
+    border-bottom: 2px solid rgb(236, 30, 30);
+    padding-bottom: 30px;
+    margin-bottom: 20px;}
+
+.content{
+    width: 400px;
+    height: 100px;
     display: flex;
     align-items: center;
-    justify-content: center;}
+    justify-content: center;
+    position: relative;}
 
-section .box{
-    position: relative;
-    width: 200px;
-    height: 200px;
-    margin: 10px;}
+.content input{
+    width: 300px;
+    padding: 10px;
+    font-family: vazir;
+    outline: none;
+    border: 1px solid rgb(126, 125, 125);}
 
-section .box .boximg{
+.content .toggle{
     position: absolute;
-    top: 0;
-    right: 0;
-    width: 100%;
-    height: 100%;}
+    right: 20px;
+    font-size: 18px;
+    cursor: pointer;
+    opacity: 0.7;}
 
- section .box .boximg.active{
-    position:fixed;
-    top: 0;
-    right: 0;
-    width:100%;
-    height: 100%;
-    z-index: 1000;}
+.content .toggle:hover{
+    opacity: 1;}
 
-section .box .boximg img{
-    position: absolute;
-    top: 0;
-    right: 0;
-    width: 100%;
-    height: 100%;
-    object-fit: cover;
-    cursor: pointer;}
+.content .toggle .fa-eye{
+    display: none;}
 
-section .box .boximg.active img{
-    top: 50px;
-    right: 50px;
-    bottom: 50px;
-    left: 50px;
-    width: calc(100% - 100px);
-    height: calc(100% - 100px);}
+.content .toggle.active .fa-eye{
+    display: block;}
 
-section .box .boximg h1{
-    opacity: 0;
-    visibility: hidden;}
-
-section .box .boximg.active h1{
-    opacity: 1;
-    visibility: visible;
-    text-align: center;
-    color: #fff;
-    letter-spacing: 5px;
-    margin-top: 10px;
-    font-size: 18px;}
-
-section .box .boximg .content{
-    position: absolute;
-    bottom: 50px;
-    right: 50px;
-    left: 50px;
-    background-color: rgba(0, 0, 0,0.9);
-    color: #fff;
-    padding: 10px 10px;
-    opacity: 0;
-    visibility: hidden;
-    transform: translateY(200px);}
-
-section .box .boximg.active .content{
-    opacity: 1;
-    visibility: visible;
-    transition: all .3s ease-in-out;
-    transform: translateY(0);}
+.content .toggle.active .fa-eye-slash{
+    display: none;}

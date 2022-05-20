@@ -1,16 +1,15 @@
-const boximg = document.querySelectorAll('.boximg');
+const toggle = document.querySelector('.toggle');
+const password = document.querySelector('#password');
 
-boximg.forEach(saman => saman.addEventListener('click', function(){
+function change(){
 
-    saman.classList.toggle('active');
-}))
+    if(password.type === 'password'){
 
- 
-    
-
-
-
-
-
-
-
+        password.setAttribute('type', 'text');
+        toggle.classList.add('active');
+    }
+    else{
+        password.setAttribute('type', 'password');
+        toggle.classList.remove('active');
+    }
+}
