@@ -1,5 +1,3 @@
-const bg = document.querySelector('.bg');
-
-window.addEventListener('scroll', function(){
-    bg.style.opacity = 1 - + window.pageYOffset / 800;
-})
+function changeColor(id){
+    document.body.style.background = document.getElementById(id).innerHTML;
+}
