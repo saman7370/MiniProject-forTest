@@ -1,15 +1,10 @@
-const toggle = document.querySelector('.toggle');
-const password = document.querySelector('#password');
+function menu(){
+    let menu = document.querySelector('#menu');
 
-function change(){
+    let toggle = document.querySelector('#toggle');
 
-    if(password.type === 'password'){
+    menu.classList.toggle('active')
 
-        password.setAttribute('type', 'text');
-        toggle.classList.add('active');
-    }
-    else{
-        password.setAttribute('type', 'password');
-        toggle.classList.remove('active');
-    }
+    toggle.classList.toggle('active')
+
 }

@@ -3,18 +3,30 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>پسورد</title>
+    <title>منو همبرگری</title>
     <link rel="stylesheet" href="css/style.css">
 </head>
 <body>
-    <h1>مخفی سازی پسورد</h1>
-    <div class="content">
-        <div class="toggle" onclick="change()">
-            <i class="far fa-eye"></i>
-            <i class="far fa-eye-slash"></i>
+    <div class="menu" id="menu">
+        <div class="banner">
+            <img src="img/1.jpg" alt="">
         </div>
-        <input type="password" id="password" placeholder="پسورد خود را وارد کنید">
+        <div class="nav">
+            <ul>
+                <li><a href="#" data-text="خانه">خانه</a></li>
+                <li><a href="#" data-text="سرویس ها">سرویس ها</a></li>
+                <li><a href="#" data-text="نمونه کار">نمونه کار</a></li>
+                <li><a href="#" data-text="تیم ما">تیم ما</a></li>
+                <li><a href="#" data-text="درباره ما">درباره ما</a></li>
+                <li><a href="#" data-text="تماس با ما">تماس با ما</a></li>
+            </ul>
+        </div>
+        
     </div>
+    <span onclick="menu()" class="hamberger-icon" id="toggle"></span> 
+
+
+
 
 
 
