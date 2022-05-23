@@ -1,10 +1,5 @@
-function menu(){
-    let menu = document.querySelector('#menu');
+const bg = document.querySelector('.bg');
 
-    let toggle = document.querySelector('#toggle');
-
-    menu.classList.toggle('active')
-
-    toggle.classList.toggle('active')
-
-}
+window.addEventListener('scroll', function(){
+    bg.style.opacity = 1 - + window.pageYOffset / 800;
+})
