@@ -1,3 +1,4 @@
-function videoUrl(link){
-    document.getElementById('slider').src = "video/" + link;
-}
+function ToggleMenu(){
+    const togglemenu = document.querySelector('.menu');
+    togglemenu.classList.toggle('active');
+} 
