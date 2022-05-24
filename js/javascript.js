@@ -1,10 +1,11 @@
- const sidebar = document.querySelector('.sidebar');
+const upto = document.querySelector('.up-to');
 
-const btn = document.querySelector('.btn');
+window.addEventListener('scroll', function(){
 
- btn.addEventListener('click', function(){
-
-     sidebar.classList.toggle('active');
-
-     sidebar.style.visibility = "visible";
- })
+    if(window.pageYOffset > 200){
+        upto.classList.add('active')
+    }
+    else{
+        upto.classList.remove('active');
+    }
+})
